@@ -1,0 +1,16 @@
+<mat-toolbar color="primary" class="toolbar">
+  <span class="app-title">Lost & Found Portal</span>
+
+  <span class="spacer"></span>
+
+  <nav>
+    <a mat-button routerLink="/lost-items" routerLinkActive="active">View Lost</a>
+    <a mat-button routerLink="/add-lost-item" routerLinkActive="active">Report Lost</a>
+    <a mat-button routerLink="/found-items" routerLinkActive="active">View Found</a>
+    <a mat-button routerLink="/found-items/add-found-item" routerLinkActive="active">Report Found</a>
+  </nav>
+</mat-toolbar>
+
+<main class="main-container">
+  <router-outlet></router-outlet>
+</main>

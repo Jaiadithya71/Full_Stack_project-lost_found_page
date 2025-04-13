@@ -1,0 +1,30 @@
+<div class="details-container" *ngIf="item; else errorBlock">
+  <mat-card class="mat-elevation-z3">
+    <mat-card-header>
+      <mat-card-title>{{ item.item_name }}</mat-card-title>
+      <mat-card-subtitle>{{ item.category }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p><strong>Description:</strong> {{ item.description }}</p>
+      <p><strong>Last Seen:</strong> {{ item.last_seen_location || 'Unknown' }}</p>
+      <p><strong>Date Lost:</strong> {{ item.date_lost | date: 'mediumDate' }}</p>
+
+      <button mat-button (click)="toggleContact()">
+        {{ showContact ? 'Hide' : 'Show' }} Contact Info
+      </button>
+      <p *ngIf="showContact"><strong>Contact:</strong> {{ item.contact_info }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" routerLink="/edit-lost-item/{{ item.id }}">Edit</button>
+      <button mat-stroked-button color="warn" (click)="deleteItem()">Delete</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<ng-template #errorBlock>
+  <mat-card class="mat-elevation-z1">
+    <mat-card-content>
+      <p>{{ error }}</p>
+    </mat-card-content>
+  </mat-card>
+</ng-template>

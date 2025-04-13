@@ -1,0 +1,40 @@
+.container {
+  padding: 24px;
+  max-width: 600px;
+  margin: 40px auto;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    text-align: center;
+    color: #3f51b5;
+    font-weight: 500;
+    margin-bottom: 24px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
+
+  button {
+    align-self: center;
+    padding: 8px 24px;
+  }
+
+  .success {
+    color: #388e3c;
+    text-align: center;
+  }
+
+  .error {
+    color: #d32f2f;
+    text-align: center;
+  }
+}
