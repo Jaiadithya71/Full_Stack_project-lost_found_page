@@ -3,6 +3,18 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FoundItemsService, FoundItem } from '../../services/found-items.service';
 import { Router } from '@angular/router';
 
+// Custom validator to ensure date is not in the future
+function pastOrTodayDateValidator(control: any) {
+  const selectedDate = new Date(control.value);
+  const today = new Date();
+  today.setHours(0, 0, 0, 0); // Normalize to midnight for comparison
+
+  if (selectedDate > today) {
+    return { futureDate: true }; // Return error object if date is in the future
+  }
+  return null; // Valid if date is past or today
+}
+
 @Component({
   selector: 'app-found-item-form',
   templateUrl: './found-item-form.component.html',
@@ -23,7 +35,7 @@ export class FoundItemFormComponent {
       category: ['', Validators.required],
       description: ['', Validators.required],
       found_location: [''],
-      date_found: ['', Validators.required],
+      date_found: ['', [Validators.required, pastOrTodayDateValidator]], // Add custom validator
       contact_info: ['', Validators.required],
     });
   }
@@ -42,5 +54,10 @@ export class FoundItemFormComponent {
         console.error('Error submitting form:', err);
       }
     });
+  }
+
+  // Optional: Getter to check validation status in template
+  get dateFound() {
+    return this.foundItemForm.get('date_found');
   }
 }
