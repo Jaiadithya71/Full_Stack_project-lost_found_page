@@ -3,6 +3,18 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LostItemsService } from '../../services/lost-items.service';
 import { Router } from '@angular/router';
 
+// Custom validator to ensure date is not in the future
+function pastOrTodayDateValidator(control: any) {
+  const selectedDate = new Date(control.value);
+  const today = new Date();
+  today.setHours(0, 0, 0, 0); // Normalize to midnight for comparison
+
+  if (selectedDate > today) {
+    return { futureDate: true }; // Return error object if date is in the future
+  }
+  return null; // Valid if date is past or today
+}
+
 @Component({
   selector: 'app-lost-item-form',
   templateUrl: './lost-item-form.component.html',
@@ -11,7 +23,7 @@ import { Router } from '@angular/router';
 export class LostItemFormComponent {
   lostItemForm: FormGroup;
   message: string = '';
-  categories: string[] = ['All', 'Electronics', 'Clothing', 'Documents', 'Accessories', 'Others'];
+  categories: string[] = ['Electronics', 'Clothing', 'Documents', 'Accessories', 'Others'];
 
   constructor(
     private fb: FormBuilder,
@@ -23,7 +35,7 @@ export class LostItemFormComponent {
       category: ['', Validators.required],
       description: ['', Validators.required],
       last_seen_location: [''],
-      date_lost: ['', Validators.required],
+      date_lost: ['', [Validators.required, pastOrTodayDateValidator]], // Add custom validator
       contact_info: ['', Validators.required],
     });
   }
@@ -47,5 +59,10 @@ export class LostItemFormComponent {
         console.error('Error submitting form:', err); // Log error for debugging
       }
     });
+  }
+
+  // Optional: Getter to check validation status in template
+  get dateLost() {
+    return this.lostItemForm.get('date_lost');
   }
 }
