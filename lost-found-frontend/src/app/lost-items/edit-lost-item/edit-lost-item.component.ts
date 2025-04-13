@@ -3,6 +3,18 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LostItemsService, LostItem } from '../../services/lost-items.service';
 
+// Custom validator to ensure date is not in the future
+function pastOrTodayDateValidator(control: any) {
+  const selectedDate = new Date(control.value);
+  const today = new Date();
+  today.setHours(0, 0, 0, 0); // Normalize to midnight for comparison
+
+  if (selectedDate > today) {
+    return { futureDate: true }; // Return error object if date is in the future
+  }
+  return null; // Valid if date is past or today
+}
+
 @Component({
   selector: 'app-edit-lost-item',
   templateUrl: './edit-lost-item.component.html',
@@ -28,7 +40,7 @@ export class EditLostItemComponent implements OnInit {
       category: ['', Validators.required],
       description: ['', Validators.required],
       last_seen_location: [''],
-      date_lost: ['', Validators.required],
+      date_lost: ['', [Validators.required, pastOrTodayDateValidator]], // Add custom validator
       contact_info: ['', Validators.required]
     });
 
@@ -62,5 +74,10 @@ export class EditLostItemComponent implements OnInit {
         console.error(err);
       }
     });
+  }
+
+  // Optional: Getter to check validation status in template
+  get dateLost() {
+    return this.form.get('date_lost');
   }
 }
