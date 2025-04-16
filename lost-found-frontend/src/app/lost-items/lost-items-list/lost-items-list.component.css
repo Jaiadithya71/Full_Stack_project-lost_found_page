@@ -1,0 +1,98 @@
+/* Container Styles */
+.container {
+  padding: 16px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px; /* Adds space between the child elements inside the container */
+}
+
+/* Heading Styles */
+h2 {
+  margin-bottom: 20px;
+  font-weight: 500;
+  color: #00796b; /* Teal for headings */
+}
+
+/* Filter Styles */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+/* Items Grid Layout (3 columns per row) */
+.items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Creates 3 equal columns */
+  gap: 20px;
+  row-gap: 24px; /* Adds space between rows of items */
+  width: 100%; /* Ensures the grid takes full width */
+}
+
+/* Card Styles */
+mat-card {
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  background: #ffffff; /* White background for cards */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
+  height: 100%; /* Ensures the card expands vertically */
+}
+
+/* Hover Effect for Cards */
+mat-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Lift effect with shadow */
+}
+
+/* Card Title */
+mat-card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #00796b; /* Teal for card titles */
+}
+
+/* Button Styles */
+button, .mat-raised-button {
+  font-weight: 500;
+  padding: 12px 20px;
+  border-radius: 40px;
+  background-color: #00796b; /* Teal background for buttons */
+  color: white;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
+}
+
+/* Button Hover Effect */
+button:hover, .mat-raised-button:hover {
+  transform: translateY(-4px); /* Button hover pop-up effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  background-color: #004d40; /* Darker Teal for hover effect */
+}
+
+/* Link Styles */
+a {
+  color: #00796b; /* Teal color for links */
+  text-decoration: none;
+}
+
+/* Link Hover Effect */
+a:hover {
+  text-decoration: underline;
+  color: #c2185b; /* Pink for hover effect */
+}
+
+/* Responsive Improvements */
+@media (max-width: 768px) {
+  .items {
+    grid-template-columns: 1fr; /* Stack items in a single column on smaller screens */
+  }
+}
+
+/*# sourceMappingURL=lost-items-list.component.css.map */

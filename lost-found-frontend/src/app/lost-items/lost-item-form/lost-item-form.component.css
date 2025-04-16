@@ -1,0 +1,41 @@
+.container {
+  padding: 24px;
+  max-width: 600px;
+  margin: 40px auto;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.container h2 {
+  text-align: center;
+  color: #3f51b5;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+.container form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.container mat-form-field {
+  width: 100%;
+}
+.container button {
+  align-self: center;
+  padding: 8px 24px;
+}
+.container .success {
+  color: #388e3c;
+  text-align: center;
+}
+.container .error {
+  color: #d32f2f;
+  text-align: center;
+}
+.container .message {
+  margin-top: 10px;
+  color: #b33a3a;
+  font-weight: 600;
+}
+
+/*# sourceMappingURL=lost-item-form.component.css.map */

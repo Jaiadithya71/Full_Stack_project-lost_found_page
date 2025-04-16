@@ -1,0 +1,46 @@
+<div class="container">
+  <h2>Edit Lost Item</h2>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Item Name</mat-label>
+      <input matInput placeholder="Item Name" formControlName="item_name" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Category</mat-label>
+      <mat-select formControlName="category" required>
+        <mat-option *ngFor="let cat of ['Electronics', 'Clothing', 'Documents', 'Accessories']" [value]="cat">
+          {{ cat }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Description</mat-label>
+      <textarea matInput placeholder="Description" formControlName="description" required></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Last Seen Location</mat-label>
+      <input matInput placeholder="Last Seen Location" formControlName="last_seen_location">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Date Lost</mat-label>
+      <input matInput [matDatepicker]="picker" placeholder="Date Lost" formControlName="date_lost" required>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Contact Info</mat-label>
+      <input matInput placeholder="Contact Info" formControlName="contact_info" required>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
+      Update
+    </button>
+
+    <p *ngIf="error" class="error">{{ error }}</p>
+  </form>
+</div>

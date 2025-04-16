@@ -1,0 +1,130 @@
+/* Global Styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', Roboto, "Helvetica Neue", sans-serif;
+  background-color: #f8fafb; /* Light background for body */
+  color: #333; /* Dark gray text for high contrast */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6; /* Improved readability */
+}
+
+/* Text Color Fixes */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: #212121; /* Darker gray for headings to improve visibility */
+  margin-top: 0;
+}
+
+a {
+  color: #4c6ef5; /* Clear blue for links */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  color: #3b5cb3; /* Darker blue on hover */
+  text-decoration: underline;
+}
+
+/* Button Styling */
+button, .mat-raised-button {
+  font-weight: 500;
+  padding: 12px 20px;
+  border-radius: 40px;
+  background-color: #4c6ef5;
+  color: white; /* Ensure button text is white for contrast */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  border: none;
+}
+
+button:hover, .mat-raised-button:hover {
+  background-color: #3b5cb3;
+  transform: translateY(-2px);
+}
+
+/* Cards and Container Text */
+.card, .mat-card {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  margin: 16px 0;
+  color: #212121; /* Darker color for card text to improve visibility */
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Input Fields */
+input, textarea, select {
+  font-family: inherit;
+  border-radius: 10px;
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  outline: none;
+  width: 100%;
+  margin-bottom: 16px;
+  color: #212121; /* Dark text in inputs for better readability */
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #4c6ef5;
+  box-shadow: 0 0 0 2px rgba(76, 110, 245, 0.2);
+}
+
+/* Dark Mode Adjustments */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212; /* Dark background for dark mode */
+  }
+  
+  .card, .mat-card {
+    background-color: #1f1f1f;
+    color: #e0e0e0; /* Light text inside cards for dark mode */
+  }
+
+  a {
+    color: #bb86fc; /* Lighter lavender-blue link color in dark mode */
+  }
+
+  button, .mat-raised-button {
+    background-color: #bb86fc; /* Lighter button color in dark mode */
+  }
+
+  button:hover, .mat-raised-button:hover {
+    background-color: #3700b3; /* Darker purple on hover */
+  }
+}
+
+/* Enhanced Text Contrast for Inputs & Buttons */
+input:invalid, textarea:invalid, select:invalid {
+  border-color: #f44336; /* Red border for invalid input */
+}
+
+input:valid, textarea:valid, select:valid {
+  border-color: #4caf50; /* Green border for valid input */
+}
+
+/* Better Contrast for Links in Different Themes */
+a {
+  color: #4c6ef5; /* Link color in light mode */
+}
+
+@media (prefers-color-scheme: dark) {
+  a {
+    color: #bb86fc; /* Lavender-blue for links in dark mode */
+  }
+}
+
+/* Ensuring Focus Visibility for Accessibility */
+button:focus, .mat-raised-button:focus {
+  outline: 3px solid #4c6ef5;
+  box-shadow: 0 0 0 4px rgba(76, 110, 245, 0.2); /* Clear focus ring */
+}
+
+input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 3px solid #4c6ef5; /* Clear focus visible outline */
+}

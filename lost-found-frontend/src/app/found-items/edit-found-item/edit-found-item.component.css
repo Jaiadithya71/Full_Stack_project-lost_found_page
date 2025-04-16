@@ -1,0 +1,10 @@
+.container {
+  padding: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
