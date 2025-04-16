@@ -7,7 +7,7 @@ import { MatSnackBar } from '@angular/material/snack-bar'; // For feedback (opti
 @Component({
   selector: 'app-lost-item-details',
   templateUrl: './lost-item-details.component.html',
-  styleUrls: ['./lost-item-details.component.scss']
+  styleUrls: ['./lost-item-details.component.css']
 })
 export class LostItemDetailsComponent implements OnInit {
   item: LostItem | null = null;
