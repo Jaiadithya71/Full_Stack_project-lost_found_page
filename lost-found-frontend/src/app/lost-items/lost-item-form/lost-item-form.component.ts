@@ -18,7 +18,7 @@ function pastOrTodayDateValidator(control: any) {
 @Component({
   selector: 'app-lost-item-form',
   templateUrl: './lost-item-form.component.html',
-  styleUrls: ['./lost-item-form.component.scss']
+  styleUrls: ['./lost-item-form.component.css']
 })
 export class LostItemFormComponent {
   lostItemForm: FormGroup;
