@@ -4,7 +4,7 @@ import { FoundItemsService, FoundItem } from '../../services/found-items.service
 @Component({
   selector: 'app-found-items-list',
   templateUrl: './found-items-list.component.html',
-  styleUrls: ['./found-items-list.component.scss']
+  styleUrls: ['./found-items-list.component.css']
 })
 export class FoundItemsListComponent implements OnInit {
   foundItems: FoundItem[] = [];
