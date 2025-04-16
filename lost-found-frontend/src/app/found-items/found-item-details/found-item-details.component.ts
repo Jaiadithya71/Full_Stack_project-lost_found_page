@@ -7,7 +7,7 @@ import { MatSnackBar } from '@angular/material/snack-bar'; // For feedback
 @Component({
   selector: 'app-found-item-details',
   templateUrl: './found-item-details.component.html',
-  styleUrls: ['./found-item-details.component.scss']
+  styleUrls: ['./found-item-details.component.css']
 })
 export class FoundItemDetailsComponent implements OnInit {
   foundItem: FoundItem | null = null;
