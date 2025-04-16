@@ -4,7 +4,7 @@ import { LostItemsService } from '../../services/lost-items.service';
 @Component({
   selector: 'app-lost-items-list',
   templateUrl: './lost-items-list.component.html',
-  styleUrls: ['./lost-items-list.component.scss']
+  styleUrls: ['./lost-items-list.component.css']
 })
 export class LostItemsListComponent implements OnInit {
   lostItems: any[] = [];
