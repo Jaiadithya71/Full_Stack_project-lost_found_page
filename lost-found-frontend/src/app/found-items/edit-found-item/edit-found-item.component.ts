@@ -18,7 +18,7 @@ function pastOrTodayDateValidator(control: any) {
 @Component({
   selector: 'app-edit-found-item',
   templateUrl: './edit-found-item.component.html',
-  styleUrls: ['./edit-found-item.component.scss']
+  styleUrls: ['./edit-found-item.component.css']
 })
 export class EditFoundItemComponent implements OnInit {
   form!: FormGroup;
