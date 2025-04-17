@@ -16,7 +16,11 @@
       <input matInput placeholder="Found Location" formControlName="found_location">
     </mat-form-field>
     <mat-form-field>
-      <input matInput [matDatepicker]="picker" placeholder="Date Found" formControlName="date_found" required>
+      <mat-label>
+        Date Found<br />
+        <small>(mm/dd/yyyy)</small>
+      </mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="date_found" required>
       <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
