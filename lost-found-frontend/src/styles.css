@@ -1,130 +1,216 @@
-/* Global Styles */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: 'Inter', Roboto, "Helvetica Neue", sans-serif;
-  background-color: #f8fafb; /* Light background for body */
-  color: #333; /* Dark gray text for high contrast */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  line-height: 1.6; /* Improved readability */
-}
+/* ========================================================================== 
+   Global Styles 
+   ========================================================================== */
 
-/* Text Color Fixes */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
-  color: #212121; /* Darker gray for headings to improve visibility */
-  margin-top: 0;
-}
-
-a {
-  color: #4c6ef5; /* Clear blue for links */
-  text-decoration: none;
-  font-weight: 500;
-}
-
-a:hover {
-  color: #3b5cb3; /* Darker blue on hover */
-  text-decoration: underline;
-}
-
-/* Button Styling */
-button, .mat-raised-button {
-  font-weight: 500;
-  padding: 12px 20px;
-  border-radius: 40px;
-  background-color: #4c6ef5;
-  color: white; /* Ensure button text is white for contrast */
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  text-transform: uppercase;
-  border: none;
-}
-
-button:hover, .mat-raised-button:hover {
-  background-color: #3b5cb3;
-  transform: translateY(-2px);
-}
-
-/* Cards and Container Text */
-.card, .mat-card {
-  background-color: white;
-  border-radius: 16px;
-  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.1);
-  padding: 24px;
-  margin: 16px 0;
-  color: #212121; /* Darker color for card text to improve visibility */
-  width: 100%;
-  max-width: 800px;
-}
-
-/* Input Fields */
-input, textarea, select {
-  font-family: inherit;
-  border-radius: 10px;
-  padding: 12px 16px;
-  border: 2px solid #e0e0e0;
-  outline: none;
-  width: 100%;
-  margin-bottom: 16px;
-  color: #212121; /* Dark text in inputs for better readability */
-}
-
-input:focus, textarea:focus, select:focus {
-  border-color: #4c6ef5;
-  box-shadow: 0 0 0 2px rgba(76, 110, 245, 0.2);
-}
-
-/* Dark Mode Adjustments */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #121212; /* Dark background for dark mode */
+   html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', Roboto, 'Helvetica Neue', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   
-  .card, .mat-card {
-    background-color: #1f1f1f;
-    color: #e0e0e0; /* Light text inside cards for dark mode */
+  /* ========================================================================== 
+     Typography 
+     ========================================================================== */
+  
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 1rem;
+    font-weight: 600;
+    color: #212121;
+    line-height: 1.25;
   }
-
+  
   a {
-    color: #bb86fc; /* Lighter lavender-blue link color in dark mode */
+    color: #4c6ef5;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
   }
-
+  
+  a:hover {
+    color: #3b5cb3;
+    text-decoration: underline;
+    transform: scale(1.05);
+  }
+  
+  /* ========================================================================== 
+     Buttons 
+     ========================================================================== */
+  
   button, .mat-raised-button {
-    background-color: #bb86fc; /* Lighter button color in dark mode */
+    display: inline-block;
+    font-weight: 500;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 40px;
+    background-color: #4c6ef5;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
-
+  
   button:hover, .mat-raised-button:hover {
-    background-color: #3700b3; /* Darker purple on hover */
+    background-color: #3b5cb3;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   }
-}
-
-/* Enhanced Text Contrast for Inputs & Buttons */
-input:invalid, textarea:invalid, select:invalid {
-  border-color: #f44336; /* Red border for invalid input */
-}
-
-input:valid, textarea:valid, select:valid {
-  border-color: #4caf50; /* Green border for valid input */
-}
-
-/* Better Contrast for Links in Different Themes */
-a {
-  color: #4c6ef5; /* Link color in light mode */
-}
-
-@media (prefers-color-scheme: dark) {
-  a {
-    color: #bb86fc; /* Lavender-blue for links in dark mode */
+  
+  button:focus, .mat-raised-button:focus {
+    outline: 3px solid #4c6ef5;
+    box-shadow: 0 0 0 4px rgba(76, 110, 245, 0.2);
   }
-}
+  
+  /* ========================================================================== 
+     Cards & Containers 
+     ========================================================================== */
+  
+  .card, .mat-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    margin: 16px auto;
+    max-width: 800px;
+    color: #212121;
+    border: 1px solid #e0e0e0;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  .card:hover, .mat-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    transform: translateY(-4px);
+  }
+  
+  /* ========================================================================== 
+     Forms & Inputs 
+     ========================================================================== */
+  
+  input, textarea, select {
+    width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    font-family: inherit;
+    font-size: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    outline: none;
+    color: #212121;
+    background-color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  input:focus, textarea:focus, select:focus {
+    border-color: #4c6ef5;
+    box-shadow: 0 0 0 2px rgba(76, 110, 245, 0.2);
+  }
+  
+  input:valid, textarea:valid, select:valid {
+    border-color: #4caf50;
+  }
+  
+  input:invalid, textarea:invalid, select:invalid {
+    border-color: #f44336;
+  }
+  
+  input:focus-visible, textarea:focus-visible, select:focus-visible {
+    outline: 3px solid #4c6ef5;
+  }
+/* ========================================================================== 
+   Material Datepicker - Clean Hover Effect with Only Background Color
+   ========================================================================== */
 
-/* Ensuring Focus Visibility for Accessibility */
-button:focus, .mat-raised-button:focus {
-  outline: 3px solid #4c6ef5;
-  box-shadow: 0 0 0 4px rgba(76, 110, 245, 0.2); /* Clear focus ring */
-}
-
-input:focus-visible, textarea:focus-visible, select:focus-visible {
-  outline: 3px solid #4c6ef5; /* Clear focus visible outline */
-}
+   .mat-datepicker-content {
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+    background: #ffffff;
+    padding: 16px 24px;
+  }
+  
+  .mat-calendar {
+    background-color: #ffffff;
+    border-radius: 12px;
+    font-family: 'Inter', sans-serif;
+    padding: 8px;
+    color: #212121;
+  }
+  
+  .mat-calendar-table {
+    width: 100%;
+    border-spacing: 0; /* Remove any spacing between the cells */
+  }
+  
+  .mat-calendar-body-cell {
+    width: 38px; /* Adjusted width */
+    height: 38px; /* Adjusted height */
+    text-align: center;
+    line-height: 38px; /* Center the text */
+    font-weight: 500;
+    font-size: 14px;
+    color: #333;
+    border-radius: 0; /* Ensure no circular borders */
+    margin: 0; /* No margin between date cells */
+    padding: 0; /* No internal padding */
+    border: none; /* No border on date cells */
+    box-shadow: none; /* Remove any shadow effect */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Only transition background and scaling */
+  }
+  
+  /* Hover effect for dates */
+  .mat-calendar-body-cell:hover {
+    background-color: #e3e9ff; /* Light blue background color */
+    transform: scale(1.1); /* Slightly enlarge the date cell */
+    cursor: pointer; /* Pointer on hover */
+  }
+  
+  /* Selected date style */
+  .mat-calendar-body-selected {
+    background-color: #4c6ef5 !important;
+    color: #fff !important;
+    font-weight: 600;
+  }
+  
+  /* Today's date color */
+  .mat-calendar-body-today:not(.mat-calendar-body-selected) {
+    color: #4c6ef5; /* Blue color for today's date */
+  }
+  
+  /* Calendar header and navigation buttons */
+  .mat-calendar-table-header th {
+    font-weight: 600;
+    font-size: 13px;
+    color: #888; /* Lighter color for the month and year */
+  }
+  
+  .mat-calendar-arrow {
+    color: #888; /* Lighter arrow color */
+  }
+  
+  .mat-calendar-period-button {
+    font-weight: 600;
+    font-size: 16px;
+    color: #888; /* Lighter color for the month and year */
+    transition: color 0.3s ease;
+  }
+  
+  .mat-calendar-period-button:hover {
+    color: #3b5cb3;
+  }
+  
+  .mat-calendar-previous-button,
+  .mat-calendar-next-button {
+    color: #888; /* Lighter arrow color */
+    transition: color 0.3s ease;
+  }
+  
+  .mat-calendar-previous-button:hover,
+  .mat-calendar-next-button:hover {
+    color: #3b5cb3;
+  }
+  
