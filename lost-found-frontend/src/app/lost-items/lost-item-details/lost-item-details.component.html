@@ -8,19 +8,21 @@
       <p><strong>Description:</strong> {{ item.description }}</p>
       <p><strong>Last Seen:</strong> {{ item.last_seen_location || 'Unknown' }}</p>
       <p><strong>Date Lost:</strong> {{ item.date_lost | date: 'mediumDate' }}</p>
-
-      <button mat-button (click)="toggleContact()">
+      <button mat-button class="custom-button" (click)="toggleContact()">
         {{ showContact ? 'Hide' : 'Show' }} Contact Info
       </button>
       <p *ngIf="showContact"><strong>Contact:</strong> {{ item.contact_info }}</p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button color="primary" routerLink="/edit-lost-item/{{ item.id }}">Edit</button>
-      <button mat-stroked-button color="warn" (click)="deleteItem()">Delete</button>
+      <button mat-raised-button class="custom-button" routerLink="/edit-lost-item/{{ item.id }}">
+        Edit
+      </button>
+      <button mat-stroked-button class="custom-button" (click)="deleteItem()">
+        Delete
+      </button>
     </mat-card-actions>
   </mat-card>
 </div>
-
 <ng-template #errorBlock>
   <mat-card class="mat-elevation-z1">
     <mat-card-content>
