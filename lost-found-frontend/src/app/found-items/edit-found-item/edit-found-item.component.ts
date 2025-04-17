@@ -24,6 +24,7 @@ export class EditFoundItemComponent implements OnInit {
   form!: FormGroup;
   itemId!: number;
   error: string = '';
+  message: string = ''; // ✅ Added for feedback display
   categories: string[] = ['Electronics', 'Clothing', 'Documents', 'Accessories', 'Others'];
 
   constructor(
@@ -50,16 +51,15 @@ export class EditFoundItemComponent implements OnInit {
         console.log('Received item.date_found:', item.date_found); // Debug log
         const formattedItem = { ...item };
         if (item.date_found) {
-          // Convert to Date object for matDatepicker
           const dateValue = new Date(item.date_found);
           if (!isNaN(dateValue.getTime())) {
-            formattedItem.date_found = dateValue; // Use Date object
+            formattedItem.date_found = dateValue;
           } else {
-            formattedItem.date_found = new Date(); // Fallback to current date
+            formattedItem.date_found = new Date();
             this.error = 'Invalid date format received from server.';
           }
         } else {
-          formattedItem.date_found = new Date(); // Fallback for null/undefined
+          formattedItem.date_found = new Date();
         }
         this.form.patchValue(formattedItem);
       },
@@ -74,23 +74,27 @@ export class EditFoundItemComponent implements OnInit {
     if (this.form.invalid) return;
 
     const formValue = this.form.value;
-    // Format date_found to YYYY-MM-DD string for the backend
     const formattedDate = new Date(formValue.date_found).toISOString().split('T')[0];
     const updatedValue = { ...formValue, date_found: formattedDate };
 
     this.foundItemsService.update(this.itemId, updatedValue).subscribe({
       next: () => {
-        console.log('Item updated successfully');
-        this.router.navigate(['/found-items']);
+        this.message = '✅ Item updated successfully!';
+        setTimeout(() => {
+          this.message = '';
+          this.router.navigate(['/found-items']);
+        }, 2000); // Wait for 2 seconds before navigating
       },
       error: (err) => {
-        this.error = 'Failed to update item: ' + err.message;
+        this.message = '❌ Failed to update item. ';
         console.error(err);
+        setTimeout(() => {
+          this.message = '';
+        }, 3000); // Clear after 3 seconds
       }
     });
   }
 
-  // Optional: Getter to check validation status in template
   get dateFound() {
     return this.form.get('date_found');
   }
