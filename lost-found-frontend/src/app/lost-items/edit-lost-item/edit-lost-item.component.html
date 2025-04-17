@@ -26,8 +26,11 @@
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="full-width">
-      <mat-label>Date Lost</mat-label>
-      <input matInput [matDatepicker]="picker" placeholder="Date Lost" formControlName="date_lost" required>
+      <mat-label>
+        Date Lost<br />
+        <small>(mm/dd/yyyy)</small>
+      </mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="date_lost" required>
       <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
@@ -41,6 +44,6 @@
       Update
     </button>
 
-    <p *ngIf="error" class="error">{{ error }}</p>
+    <p *ngIf="message" [ngClass]="{'success': message.includes('✅'), 'error': message.includes('❌')}">{{ message }}</p>
   </form>
 </div>
