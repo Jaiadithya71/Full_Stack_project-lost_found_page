@@ -1,27 +1,86 @@
-.toolbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+/* ========================================================================== 
+   Toolbar Layout
+   ========================================================================== */
 
-.app-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.spacer {
-  flex: 1 1 auto;
-}
-
-nav a {
-  margin-left: 12px;
-  color: white;
-  text-decoration: none;
-}
-
-nav a.active {
-  font-weight: bold;
-  border-bottom: 2px solid white;
-}
-
-/*# sourceMappingURL=app.component.css.map */
+   .toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #4c6ef5, #3b5cb3); /* Gradient background for depth */
+    padding: 16px 24px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow for floating effect */
+  }
+  
+  .app-title {
+    font-size: 1.8rem;
+    font-weight: 700; /* Bolder font weight for more emphasis */
+    color: #ffffff; /* White for high contrast */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+  }
+ 
+  .spacer {
+    flex: 1 1 auto;
+  }
+  
+  /* ========================================================================== 
+     Navigation Links
+     ========================================================================== */
+  
+  nav a {
+    margin-left: 20px; /* Spacing between links */
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 10px 18px; /* More padding for better touch targets */
+    border-radius: 8px; /* Rounded borders for links */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover and active states */
+  }
+  
+  nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Slight hover effect */
+    transform: translateY(-4px); /* Lift effect on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+  }
+  
+  nav a.active {
+    font-weight: bold;
+    border-bottom: 4px solid #f7f7f7; /* Thicker, more vibrant active underline */
+    background-color: rgba(255, 255, 255, 0.3); /* Active background color for visibility */
+    transition: all 0.3s ease; /* Smooth transition when becoming active */
+  }
+  
+  /* ========================================================================== 
+     Responsive Design
+     ========================================================================== */
+  
+  @media (max-width: 768px) {
+    .toolbar {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 12px 16px;
+    }
+  
+    nav a {
+      margin-left: 0;
+      margin-top: 10px;
+      font-size: 1.2rem; /* Larger font size for better readability */
+    }
+  
+    .app-title {
+      font-size: 1.6rem; /* Slightly smaller title for mobile view */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .toolbar {
+      padding: 12px;
+    }
+  
+    nav a {
+      font-size: 1.1rem; /* Smaller font size for even smaller screens */
+    }
+  }
