@@ -11,8 +11,8 @@ export class LostItemsListComponent implements OnInit {
   categories: string[] = ['All', 'Electronics', 'Clothing', 'Documents', 'Accessories', 'Others'];
   selectedCategory: string = 'All';
   searchText: string = '';
-  startDate: string = '';
-  endDate: string = '';
+  startDate: Date | null = null;  // Use Date object instead of string
+  endDate: Date | null = null;    // Use Date object instead of string
 
   constructor(private lostItemsService: LostItemsService) {}
 
@@ -25,13 +25,14 @@ export class LostItemsListComponent implements OnInit {
   }
 
   onFilterChange(): void {
-    // No-op; used to trigger filtering reactively through [(ngModel)]
+    // Filter logic is now handled by `filteredItems`
   }
 
   clearDateFilter(): void {
-    this.startDate = '';
-    this.endDate = '';
-    this.onFilterChange();
+    this.startDate = null;
+    this.endDate = null;
+    this.searchText = '';  // Optionally clear search text as well
+    this.selectedCategory = 'All'; // Optionally reset category
   }
 
   filteredItems(): any[] {
@@ -46,8 +47,9 @@ export class LostItemsListComponent implements OnInit {
 
       const itemDate = new Date(item.date_lost);
 
-      const isAfterStart = !this.startDate || itemDate >= new Date(this.startDate);
-      const isBeforeEnd = !this.endDate || itemDate <= new Date(this.endDate);
+      // Check if itemDate is within the selected range
+      const isAfterStart = !this.startDate || itemDate >= this.startDate;
+      const isBeforeEnd = !this.endDate || itemDate <= this.endDate;
 
       return matchesCategory && matchesSearch && isAfterStart && isBeforeEnd;
     });
