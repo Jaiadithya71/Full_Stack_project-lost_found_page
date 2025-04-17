@@ -16,7 +16,11 @@
       <input matInput placeholder="Found Location" formControlName="found_location">
     </mat-form-field>
     <mat-form-field>
-      <input matInput [matDatepicker]="picker" placeholder="Date Found" formControlName="date_found" required>
+      <mat-label>
+        Date Found<br />
+        <small>(mm/dd/yyyy)</small>
+      </mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="date_found" required>
       <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
@@ -24,6 +28,6 @@
       <input matInput placeholder="Contact Info" formControlName="contact_info" required>
     </mat-form-field>
     <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Update</button>
-    <p *ngIf="error" class="error">{{ error }}</p>
+    <p *ngIf="message" [ngClass]="{'success': message.includes('✅'), 'error': message.includes('❌')}">{{ message }}</p>
   </form>
 </div>
