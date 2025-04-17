@@ -1,98 +1,144 @@
-/* Container Styles */
+/* General Container Styles */
 .container {
-  padding: 16px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  background: #fefefe;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
   display: flex;
   flex-direction: column;
-  row-gap: 24px; /* Adds space between the child elements inside the container */
+  row-gap: 32px;
+  max-width: 1200px;
+  margin: 32px auto;
 }
 
-/* Heading Styles */
 h2 {
-  margin-bottom: 20px;
-  font-weight: 500;
-  color: #00796b; /* Teal for headings */
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  color: #004d40;
 }
 
-/* Filter Styles */
+/* Filter Section Styles */
 .filters {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 24px;
+  gap: 16px;
+  background: #e0f2f1;
+  padding: 20px;
+  border-radius: 12px;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
-/* Items Grid Layout (3 columns per row) */
+mat-form-field {
+  min-width: 220px;
+  background: white;
+  border-radius: 6px;
+}
+
+mat-icon {
+  color: #00796b;
+}
+
+button[color="warn"] {
+  background-color: #ffcdd2;
+  color: #b71c1c;
+  font-weight: 600;
+  border-radius: 30px;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(255, 0, 0, 0.1);
+}
+
+button[color="warn"]:hover {
+  background-color: #ef9a9a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(255, 0, 0, 0.15);
+}
+
+/* Item List Section */
 .items {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Creates 3 equal columns */
-  gap: 20px;
-  row-gap: 24px; /* Adds space between rows of items */
-  width: 100%; /* Ensures the grid takes full width */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
 }
 
-/* Card Styles */
 mat-card {
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  background: #ffffff; /* White background for cards */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
-  height: 100%; /* Ensures the card expands vertically */
+  background: linear-gradient(to top left, #ffffff, #f1f8e9);
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
 }
 
-/* Hover Effect for Cards */
 mat-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Lift effect with shadow */
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Card Title */
 mat-card-title {
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #00695c;
+}
+
+mat-card-content p {
+  font-size: 15px;
+  margin: 6px 0;
+  color: #444;
+}
+
+mat-card-actions a {
   font-weight: 600;
-  color: #00796b; /* Teal for card titles */
+  color: #00796b;
+  transition: 0.3s;
 }
 
-/* Button Styles */
-button, .mat-raised-button {
-  font-weight: 500;
-  padding: 12px 20px;
-  border-radius: 40px;
-  background-color: #00796b; /* Teal background for buttons */
-  color: white;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  text-transform: uppercase;
-  border: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
-}
-
-/* Button Hover Effect */
-button:hover, .mat-raised-button:hover {
-  transform: translateY(-4px); /* Button hover pop-up effect */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-  background-color: #004d40; /* Darker Teal for hover effect */
-}
-
-/* Link Styles */
-a {
-  color: #00796b; /* Teal color for links */
-  text-decoration: none;
-}
-
-/* Link Hover Effect */
-a:hover {
+mat-card-actions a:hover {
+  color: #c2185b;
   text-decoration: underline;
-  color: #c2185b; /* Pink for hover effect */
 }
 
-/* Responsive Improvements */
-@media (max-width: 768px) {
-  .items {
-    grid-template-columns: 1fr; /* Stack items in a single column on smaller screens */
+.no-results {
+  text-align: center;
+  color: #888;
+  font-size: 18px;
+  margin-top: 24px;
+}
+
+/* Calendar Date Styles */
+.mat-calendar {
+  .mat-calendar-body {
+    .mat-calendar-body-cell {
+      background-color: #e0f2f1 !important;
+      border-radius: 50%;
+      transition: background-color 0.3s ease;
+    }
+    
+    .mat-calendar-body-cell:hover {
+      background-color: #80deea !important; /* Light blue color on hover */
+      transform: scale(1.1); /* Make it slightly bigger when hovered */
+    }
+    
+    .mat-calendar-body-cell-selected {
+      background-color: #00796b !important; /* Dark teal color for selected date */
+      color: white !important;
+    }
+  }
+
+  .mat-datepicker-toggle {
+    color: #00796b;
   }
 }
 
-/*# sourceMappingURL=lost-items-list.component.css.map */
+/* Responsive Design */
+@media (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .items {
+    grid-template-columns: 1fr;
+  }
+}
