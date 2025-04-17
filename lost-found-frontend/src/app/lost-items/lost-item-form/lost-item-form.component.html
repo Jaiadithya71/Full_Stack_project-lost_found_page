@@ -4,35 +4,30 @@
     <mat-form-field>
       <input matInput placeholder="Item Name" formControlName="item_name" required>
     </mat-form-field>
-
     <mat-form-field>
       <mat-select placeholder="Category" formControlName="category" required>
         <mat-option *ngFor="let cat of categories" [value]="cat">{{ cat }}</mat-option>
       </mat-select>
     </mat-form-field>
-
     <mat-form-field>
       <textarea matInput placeholder="Description" formControlName="description" required></textarea>
     </mat-form-field>
-
     <mat-form-field>
       <input matInput placeholder="Last Seen Location" formControlName="last_seen_location">
     </mat-form-field>
-
     <mat-form-field>
-      <input matInput [matDatepicker]="picker" placeholder="Date Lost" formControlName="date_lost" required>
+      <mat-label>
+        Date Lost<br />
+        <small>(mm/dd/yyyy)</small>
+      </mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="date_lost" required>
       <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
-
     <mat-form-field>
       <input matInput placeholder="Contact Info" formControlName="contact_info" required>
     </mat-form-field>
-
     <button mat-raised-button color="primary" type="submit" [disabled]="lostItemForm.invalid">Submit</button>
-
-    <p *ngIf="message" [ngClass]="{'success': message.includes('✅'), 'error': message.includes('❌')}">
-      {{ message }}
-    </p> 
+    <p *ngIf="message" [ngClass]="{'success': message.includes('✅'), 'error': message.includes('❌')}">{{ message }}</p> 
   </form>
 </div>
