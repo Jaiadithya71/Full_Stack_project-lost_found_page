@@ -1,7 +1,4 @@
-/* ========================================================================== 
-   Toolbar Layout
-   ========================================================================== */
-
+/* Toolbar Layout */
    .toolbar {
     display: flex;
     justify-content: space-between;
@@ -9,8 +6,7 @@
     background: linear-gradient(135deg, #4c6ef5, #3b5cb3); /* Gradient background for depth */
     padding: 16px 24px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow for floating effect */
-  }
-  
+  } 
   .app-title {
     font-size: 1.8rem;
     font-weight: 700; /* Bolder font weight for more emphasis */
@@ -19,16 +15,11 @@
     letter-spacing: 1px;
     display: flex;
     align-items: center;
-  }
- 
+  } 
   .spacer {
     flex: 1 1 auto;
   }
-  
-  /* ========================================================================== 
-     Navigation Links
-     ========================================================================== */
-  
+/* Navigation Links */  
   nav a {
     margin-left: 20px; /* Spacing between links */
     color: white;
@@ -38,14 +29,12 @@
     padding: 10px 18px; /* More padding for better touch targets */
     border-radius: 8px; /* Rounded borders for links */
     transition: all 0.3s ease-in-out; /* Smooth transition for hover and active states */
-  }
-  
+  }  
   nav a:hover {
     background-color: rgba(255, 255, 255, 0.2); /* Slight hover effect */
     transform: translateY(-4px); /* Lift effect on hover */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
   }
-  
   nav a.active {
     font-weight: bold;
     border-bottom: 4px solid #f7f7f7; /* Thicker, more vibrant active underline */
