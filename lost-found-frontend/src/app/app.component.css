@@ -52,35 +52,3 @@
     background-color: rgba(255, 255, 255, 0.3); /* Active background color for visibility */
     transition: all 0.3s ease; /* Smooth transition when becoming active */
   }
-  
-  /* ========================================================================== 
-     Responsive Design
-     ========================================================================== */
-  
-  @media (max-width: 768px) {
-    .toolbar {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 12px 16px;
-    }
-  
-    nav a {
-      margin-left: 0;
-      margin-top: 10px;
-      font-size: 1.2rem; /* Larger font size for better readability */
-    }
-  
-    .app-title {
-      font-size: 1.6rem; /* Slightly smaller title for mobile view */
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .toolbar {
-      padding: 12px;
-    }
-  
-    nav a {
-      font-size: 1.1rem; /* Smaller font size for even smaller screens */
-    }
-  }
