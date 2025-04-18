@@ -1,7 +1,4 @@
-/* ========================================================================== 
-   Global Styles 
-   ========================================================================== */
-
+/* Global Styles */
    html, body {
     height: 100%;
     margin: 0;
@@ -13,35 +10,25 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  
-  /* ========================================================================== 
-     Typography 
-     ========================================================================== */
-  
+/* Typography */
   h1, h2, h3, h4, h5, h6 {
     margin: 0 0 1rem;
     font-weight: 600;
     color: #212121;
     line-height: 1.25;
   }
-  
   a {
     color: #4c6ef5;
     font-weight: 500;
     text-decoration: none;
     transition: color 0.3s ease, text-decoration 0.3s ease;
-  }
-  
+  }  
   a:hover {
     color: #3b5cb3;
     text-decoration: underline;
     transform: scale(1.05);
   }
-  
-  /* ========================================================================== 
-     Buttons 
-     ========================================================================== */
-  
+/* Buttons */
   button, .mat-raised-button {
     display: inline-block;
     font-weight: 500;
@@ -55,22 +42,16 @@
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
-  
   button:hover, .mat-raised-button:hover {
     background-color: #3b5cb3;
     transform: translateY(-4px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   }
-  
   button:focus, .mat-raised-button:focus {
     outline: 3px solid #4c6ef5;
     box-shadow: 0 0 0 4px rgba(76, 110, 245, 0.2);
   }
-  
-  /* ========================================================================== 
-     Cards & Containers 
-     ========================================================================== */
-  
+/* Cards & Containers */
   .card, .mat-card {
     background-color: #ffffff;
     border-radius: 16px;
@@ -82,16 +63,11 @@
     border: 1px solid #e0e0e0;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
   }
-  
   .card:hover, .mat-card:hover {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
     transform: translateY(-4px);
   }
-  
-  /* ========================================================================== 
-     Forms & Inputs 
-     ========================================================================== */
-  
+/* Forms & Inputs */
   input, textarea, select {
     width: 100%;
     padding: 12px 16px;
@@ -104,48 +80,34 @@
     color: #212121;
     background-color: #fff;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  input:focus, textarea:focus, select:focus {
-    border-color: #4c6ef5;
-    box-shadow: 0 0 0 2px rgba(76, 110, 245, 0.2);
-  }
-  
+  }  
   input:valid, textarea:valid, select:valid {
     border-color: #4caf50;
   }
-  
   input:invalid, textarea:invalid, select:invalid {
     border-color: #f44336;
   }
-  
   input:focus-visible, textarea:focus-visible, select:focus-visible {
     outline: 3px solid #4c6ef5;
   }
-/* ========================================================================== 
-   Material Datepicker - Clean Hover Effect with Only Background Color
-   ========================================================================== */
-
+/* Material Datepicker - Clean Hover Effect with Only Background Color */
    .mat-datepicker-content {
     border-radius: 16px;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
     background: #ffffff;
     padding: 16px 24px;
   }
-  
   .mat-calendar {
     background-color: #ffffff;
     border-radius: 12px;
     font-family: 'Inter', sans-serif;
     padding: 8px;
     color: #212121;
-  }
-  
+  }  
   .mat-calendar-table {
     width: 100%;
     border-spacing: 0; /* Remove any spacing between the cells */
-  }
-  
+  }  
   .mat-calendar-body-cell {
     width: 38px; /* Adjusted width */
     height: 38px; /* Adjusted height */
@@ -160,57 +122,43 @@
     border: none; /* No border on date cells */
     box-shadow: none; /* Remove any shadow effect */
     transition: background-color 0.3s ease, transform 0.2s ease; /* Only transition background and scaling */
-  }
-  
+  }  
   /* Hover effect for dates */
   .mat-calendar-body-cell:hover {
     background-color: #e3e9ff; /* Light blue background color */
-    transform: scale(1.1); /* Slightly enlarge the date cell */
     cursor: pointer; /* Pointer on hover */
-  }
-  
+  }  
   /* Selected date style */
   .mat-calendar-body-selected {
-    background-color: #4c6ef5 !important;
+    background-color: #3b5cb3 !important;
     color: #fff !important;
     font-weight: 600;
-  }
-  
+  }  
   /* Today's date color */
   .mat-calendar-body-today:not(.mat-calendar-body-selected) {
     color: #4c6ef5; /* Blue color for today's date */
-  }
-  
+  }  
   /* Calendar header and navigation buttons */
   .mat-calendar-table-header th {
     font-weight: 600;
     font-size: 13px;
     color: #888; /* Lighter color for the month and year */
-  }
-  
-  .mat-calendar-arrow {
-    color: #888; /* Lighter arrow color */
-  }
-  
+  }  
   .mat-calendar-period-button {
     font-weight: 600;
     font-size: 16px;
     color: #888; /* Lighter color for the month and year */
     transition: color 0.3s ease;
   }
-  
   .mat-calendar-period-button:hover {
     color: #3b5cb3;
   }
-  
   .mat-calendar-previous-button,
   .mat-calendar-next-button {
     color: #888; /* Lighter arrow color */
     transition: color 0.3s ease;
   }
-  
   .mat-calendar-previous-button:hover,
   .mat-calendar-next-button:hover {
     color: #3b5cb3;
   }
-  
