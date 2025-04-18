@@ -10,14 +10,12 @@
   max-width: 1200px;
   margin: 32px auto;
 }
-
 h2 {
   text-align: center;
   font-size: 32px;
   font-weight: 700;
   color: #004d40;
 }
-
 /* Filter Section Styles */
 .filters {
   display: flex;
@@ -29,17 +27,14 @@ h2 {
   justify-content: center;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
-
 mat-form-field {
   min-width: 220px;
   background: white;
   border-radius: 6px;
 }
-
 mat-icon {
   color: #00796b;
 }
-
 button[color="warn"] {
   background-color: #ffcdd2;
   color: #b71c1c;
@@ -49,63 +44,56 @@ button[color="warn"] {
   transition: all 0.3s ease;
   box-shadow: 0 4px 10px rgba(255, 0, 0, 0.1);
 }
-
 button[color="warn"]:hover {
   background-color: #ef9a9a;
   transform: translateY(-2px);
   box-shadow: 0 6px 14px rgba(255, 0, 0, 0.15);
 }
-
 /* Item List Section */
 .items {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 24px;
 }
-
 mat-card {
   background: linear-gradient(to top left, #ffffff, #f1f8e9);
   padding: 16px;
   border-radius: 12px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
+  transition: all 0.3s ease;  
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
-
 mat-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
-
 mat-card-title {
   font-size: 20px;
   font-weight: bold;
   color: #00695c;
 }
-
 mat-card-content p {
   font-size: 15px;
   margin: 6px 0;
   color: #444;
 }
-
 mat-card-actions a {
   font-weight: 600;
   color: #00796b;
   transition: 0.3s;
 }
-
 mat-card-actions a:hover {
   color: #c2185b;
   text-decoration: underline;
 }
-
 .no-results {
   text-align: center;
   color: #888;
   font-size: 18px;
   margin-top: 24px;
 }
-
 /* Calendar Date Styles */
 .mat-calendar {
   .mat-calendar-body {
@@ -113,32 +101,17 @@ mat-card-actions a:hover {
       background-color: #e0f2f1 !important;
       border-radius: 50%;
       transition: background-color 0.3s ease;
-    }
-    
+    }    
     .mat-calendar-body-cell:hover {
       background-color: #80deea !important; /* Light blue color on hover */
       transform: scale(1.1); /* Make it slightly bigger when hovered */
     }
-    
     .mat-calendar-body-cell-selected {
       background-color: #00796b !important; /* Dark teal color for selected date */
       color: white !important;
     }
   }
-
   .mat-datepicker-toggle {
     color: #00796b;
-  }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .filters {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .items {
-    grid-template-columns: 1fr;
   }
 }
