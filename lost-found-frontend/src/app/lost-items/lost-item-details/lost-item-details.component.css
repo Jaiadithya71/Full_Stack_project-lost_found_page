@@ -2,11 +2,7 @@
   max-width: 600px;
   margin: 40px auto;
   padding: 20px;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  white-space: normal;
 }
-
 mat-card {
   border-radius: 8px;
   padding: 16px;
@@ -16,36 +12,25 @@ mat-card {
   overflow-wrap: break-word;
   white-space: normal;
 }
-
 mat-card-title {
   font-size: 20px;
   font-weight: 600;
   color: #3f51b5;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  white-space: normal;
 }
-
 mat-card-subtitle {
   font-size: 14px;
   color: #757575;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  white-space: normal;
 }
-
 p {
   word-wrap: break-word;
   overflow-wrap: break-word;
   white-space: normal;
   margin-bottom: 8px;
 }
-
 button {
   margin-right: 12px;
   margin-top: 16px;
 }
-
 /* Custom Button - white with black text */
 button.custom-button {
   color: black;
@@ -53,7 +38,6 @@ button.custom-button {
   border: 1px solid black;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-
 /* Hover effect for button */
 button.custom-button:hover {
   background-color: #3f51b5;
