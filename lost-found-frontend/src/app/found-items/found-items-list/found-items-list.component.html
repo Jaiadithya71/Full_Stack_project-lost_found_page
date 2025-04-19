@@ -36,9 +36,9 @@
       <mat-card-title>{{ item.item_name }}</mat-card-title>
       <mat-card-content>
         <p><strong>Category:</strong> {{ item.category }}</p>
+        <p><strong>Description:</strong> {{ item.description }}</p>
         <p><strong>Location:</strong> {{ item.found_location }}</p>
         <p><strong>Date Found:</strong> {{ item.date_found | date:'mediumDate' }}</p>
-        <p><strong>Contact:</strong> {{ item.contact_info }}</p>
       </mat-card-content>
       <mat-card-actions>
         <a mat-button [routerLink]="['/found-items/details', item.id]">View Details</a>
