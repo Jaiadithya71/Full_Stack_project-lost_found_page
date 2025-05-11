@@ -1,3 +1,5 @@
+// Follow the below steps to setup the backend database in MySql
+
 create a MySQL file
 
 CREATE DATABASE lost_and_found;
